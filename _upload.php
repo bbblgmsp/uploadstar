@@ -1,14 +1,8 @@
 <?php 
 
-echo "Hello World !";
-
 if ($_SERVER ["REQUEST_METHOD"] === "POST") {
 
-	echo "SERVER [REQUEST_METHOD] === POST";
-
 	if (isset($_FILES['files'])) {
-
-		echo "isset(_FILES['files']";
 
 		$errors = [];
 		$path = "/images/";
@@ -23,18 +17,6 @@ if ($_SERVER ["REQUEST_METHOD"] === "POST") {
 
 			$file = $path . $file_name;
 			
-			// if (!in_array($file_ext, $extensions)) {
-			// 	$errors[] = 'Dateityp nicht erlaubt: ' . $file_name . ' ' . $file_type;
-			// }
-
-			// if ($file_size > 2097152) {
-			// 	$errors[] = 'Datei zu groß: ' . $file_name . ' ' . $file_type;
-			// }
-			
-			// if (empty($errors)) {
-			// 	move_uploaded_file($file_tmp, $file);
-			// }
-
 		}
 		
 		if ($errors) print_r($errors);
